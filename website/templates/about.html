@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+</head>
+<body>
+    <h1>About</h1>
+    <p>このAboutページを追加するには？</p>
+    <dl>
+        <dt>まず urls.pyにabout/追加する</dt>
+        <dd>
+            <code>
+                <pre>
+                    from django.urls import path
+
+                    from .views import IndexView, AboutView    # .ドットは同じフォルダ内からviews.py（pyつけない）からviewを持ってこい
+
+                urlpatterns = [
+                    path('', IndexView.as_view()),
+                    path('about/', AboutView.as_view()),
+                ]
+
+                </pre>
+            </code>
+        </dd>
+            <dt>次に views.py.pyにclass下のコードのように追加する</dt>
+            <dd>
+                <code>
+                    <pre>
+                        from django.views.generic import TemplateView
+
+                        class IndexView(TemplateView):
+                            template_name = "index.html"
+                        
+                        class AboutView(TemplateView):
+                            template_name = "about.html"    
+                        
+                    </pre>
+                </code>
+            </dd>
+    </dl>
+</body>
+</html>
