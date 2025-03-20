@@ -1,0 +1,7 @@
+# Python venv の管理対象外ファイル
+venv/
+
+# Python バイトコードファイル
+**/__pycache__/
+**/*.pyc
+**/*.pyo
